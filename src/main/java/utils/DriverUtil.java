@@ -53,23 +53,7 @@ public class DriverUtil {
         }
     }
 
-    public WebDriver getWebDriver() {
-        return webDriver;
-    }
-
-    public void setWebDriver(WebDriver webDriver) {
-        this.webDriver = webDriver;
-    }
-
-    public void navigateTo(String url){
-        if (url == null){
-            throw new NullPointerException("URL not provided");
-
-        } else {
-            this.webDriver.navigate().to(url);
-        }
-
-
-
+    public void stopWebDriver() {
+        this.webDriver.quit();
     }
 }

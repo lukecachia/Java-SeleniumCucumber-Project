@@ -1,5 +1,6 @@
 package hooks;
 
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
@@ -17,8 +18,13 @@ public class Hooks {
         System.out.println("Starting scenario: " + scenario.getName());
         webDriver = driverUtil.startWebDriver("chrome");
 
+    }
 
+    @After()
+    public void closeWebDriver(){
+        driverUtil.stopWebDriver();
 
     }
+
 
 }

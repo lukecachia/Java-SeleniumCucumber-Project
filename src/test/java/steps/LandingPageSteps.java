@@ -49,4 +49,11 @@ public class LandingPageSteps {
     public void iScrollDownToTheMetroSection() throws InterruptedException {
         landingPage.scrollToSection();
     }
+
+    @And("I verify that the percentual value is {string}")
+    public void iVerifyThatThePercentualValueIs(String value) {
+        Assert.assertEquals(landingPage.getPercentualValueFromElement(), value, "The value found was " + landingPage.getPercentualValueFromElement() +
+                "and not " + value + " as expected. Please check!");
+        System.out.println("Value found in the element was " + landingPage.getPercentualValueFromElement() + " as expected.");
+    }
 }

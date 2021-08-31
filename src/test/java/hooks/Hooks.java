@@ -21,7 +21,8 @@ public class Hooks {
     }
 
     @After()
-    public void closeWebDriver(){
+    public void closeWebDriver() throws InterruptedException {
+        Thread.sleep(3000);
         driverUtil.stopWebDriver();
 
     }
